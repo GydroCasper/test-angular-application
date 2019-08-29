@@ -1,0 +1,15 @@
+<app-resource-table [resourceItems]="store.demand"></app-resource-table>
+
+<div style="text-align: right;">
+    <button type="button" class="btn btn-primary" style="vertical-align: unset;"
+        (click)="check()">Check</button>
+</div>
+
+<div *ngIf="checkingResults.length">
+    <div>
+        You can purchase:
+    </div>
+    <div *ngFor="let checkingResult of checkingResults">
+        <b>{{checkingResult.item1}}</b> - {{checkingResult.item2}}
+    </div>
+</div>

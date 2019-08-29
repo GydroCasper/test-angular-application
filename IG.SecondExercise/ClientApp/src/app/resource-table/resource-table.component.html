@@ -1,0 +1,41 @@
+<div class="table">
+    <div class="row">
+        <div class="cell th">
+            Resource Type
+        </div>
+        <div class="cell th">
+            Amount
+        </div>
+        <div class="cell th">
+            Action
+        </div>
+    </div>
+    <div class="row" *ngFor="let resourceItem of resourceItems; let i = index">
+        <div class="cell">
+            <b>{{resourceItem.resourceType}}</b>
+        </div>
+        <div class="cell">
+            <b>{{resourceItem.amount}}</b>
+        </div>
+        <div class="cell">
+            <button type="button" class="btn btn-danger" style="vertical-align: unset;"
+                (click)="resourceDeleted(i)">Delete</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <select class="form-control form-control-md select" [(ngModel)]="newResourceItem.resourceType">
+                <option></option>
+                <option *ngFor="let resourceType of resourceTypes">{{resourceType}}</option>
+            </select>
+        </div>
+        <div class="cell">
+            <input type="number" min="1" allow-negative="false" class="form-control amount-input"
+                [(ngModel)]="newResourceItem.amount" />
+        </div>
+        <div class="cell">
+            <button type="button" class="btn btn-primary" style="vertical-align: unset;" (click)="newResourceAdded()"
+                [disabled]="!newResourceItem || !newResourceItem.resourceType || !newResourceItem.amount">Add</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.table {
+    display: table;
+    width: 40em;
+}
+
+.row {
+    display: table-row;
+    text-align: center;
+    padding-top: 15em;
+}
+
+.th {
+    border-bottom: 1px solid black;
+}
+
+.cell {
+    display: table-cell;
+    padding-left: 5em; 
+    padding-right: 5em; 
+    padding-top: 1em;
+}
+
+.select {
+    width: 25em;
+}
+
+.amount-input {
+    width: 5em;
+}
